@@ -1,17 +1,13 @@
 <?php
 
 class Invoice {
-    private $description;
-    private $total;
-    private $date;
-    private $paid;
 
-    public function __construct($description, $total, $date, $paid)
+    public function __construct(
+        private $description,
+        private $total,
+        private $date,
+        private $paid)
     {
-        $this->description = $description;
-        $this->total = $total;
-        $this->date = $date;
-        $this->paid = $paid;
     }
 }
 
@@ -19,6 +15,7 @@ class Invoice {
 // description: 'something'
 
 // with named params the order does not matter
+// downside if property name is changed this must be changed as well
 $invoice = new Invoice(
     description:'customer installation',
     total: 10000,
